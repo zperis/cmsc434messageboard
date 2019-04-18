@@ -20,4 +20,9 @@
         android:icon="@drawable/ic_contacts"
         android:title="Contact" />
 
+    <item
+        android:id="@+id/navigation_game"
+        android:icon="@drawable/ic_game"
+        android:title="Game" />
+
 </menu>

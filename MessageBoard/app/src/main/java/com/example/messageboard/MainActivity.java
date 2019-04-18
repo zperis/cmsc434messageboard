@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private View calendarButton;
+    private View signinButton;
+    private View contactButton;
+    private View gameButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_contact:
                     mTextMessage.setText("Contact");
+                    return true;
+                case R.id.navigation_game:
+                    mTextMessage.setText("Game");
                     return true;
             }
             return false;
@@ -54,6 +60,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Scheduler.class));
+            }
+        });
+
+        signinButton = (View) findViewById(R.id.navigation_signin);
+        signinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Signin.class));
+            }
+        });
+
+        contactButton = (View) findViewById(R.id.navigation_contact);
+        contactButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Contact.class));
+            }
+        });
+
+        gameButton = (View) findViewById(R.id.navigation_game);
+        gameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Game.class));
             }
         });
     }
