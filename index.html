@@ -133,6 +133,13 @@ body
              }
              reader.readAsDataURL(event.target.files[0]);
          }
+    
+        function namechange(){
+            if(confirm("Are you sure?")){
+                document.getElementById('namearea').innerHTML = document.getElementById('newname').value;
+            }
+        }
+    
 </script>
 </head>
 <body>
@@ -151,15 +158,20 @@ body
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="supercalenderpage.html">Calender</a></li>
-      <li><a href="#supergames.html">Games</a></li>
+      <li><a href="supergames.html">Games</a></li>
     </ul>
   </div>
   <div class="main">
     <h2>System Settings</h2>
-    <h5>Set Profile Picture</h5> 
+    <h4>Set Profile Picture</h4> 
     <input type="file" accept="image/*" onchange="preview_image(event)">
     <img src="https://maap.ictas.vt.edu/content/maap_ictas_vt_edu/en/About/People/_jcr_content/content/vtmulticolumn_1922581201/vt-items_0/adaptiveimage_copy_c_795333438.transform/m-medium/image.png" id="output_image" alt="your image"/>
     <br>
+    <h4>Change your Username: </h4>
+       <input type = "text" id = "newname"/> <button type="button" onclick= "namechange()">Submit!</button>
+      <br>
+      <h5>Current username: <h5 id = "namearea">Evan Golub</h5></h5>
+    
   </div>
 </div>
 
