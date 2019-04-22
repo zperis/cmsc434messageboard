@@ -1,0 +1,20 @@
+{{#each data}}
+    <h2>Sign-In Sheet:</h2>
+    <form method="POST" action="/removeFirst">
+        <ul id="myList">
+            {{#each this.signin as |item|}}
+                <div class="signinContainer">
+                    <form method="POST" action="/removeCurrent">
+                        <li class="signin">
+                            {{item.[0]}}: {{item.[1]}}
+                            <div class="deleteContainer">
+                                <button class="delete">Remove</button>
+                            </div>
+                        </li>
+                    </form>
+                </div>
+            {{/each}}
+        </ul>
+        <button type="submit">Remove First</button>
+    </form>
+{{/each}}

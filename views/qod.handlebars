@@ -1,0 +1,10 @@
+<h2>Current Quote:</h2>
+{{#each data}}
+    {{this.qod}}
+{{/each}}
+<br>
+<h2>Enter new Quote:</h2>
+<form method="POST" action="/addQOD">
+    <input type="textarea" name="qod">
+    <button type="submit">Submit</button>
+</form>

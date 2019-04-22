@@ -1,0 +1,18 @@
+<script type= "text/javascript">
+         function preview_image(event) {
+             var reader = new FileReader();
+             reader.onload = function(){
+                 var output = document.getElementById('output_image');
+                 output.src = reader.result;
+             }
+             reader.readAsDataURL(event.target.files[0]);
+         }
+</script>
+
+<div class="main">
+    <h2>System Settings</h2>
+    <h5>Set Profile Picture</h5> 
+    <input type="file" accept="image/*" onchange="preview_image(event)">
+    <img src="https://maap.ictas.vt.edu/content/maap_ictas_vt_edu/en/About/People/_jcr_content/content/vtmulticolumn_1922581201/vt-items_0/adaptiveimage_copy_c_795333438.transform/m-medium/image.png" id="output_image" alt="your image"/>
+    <br>
+ </div>
