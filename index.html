@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Super Message Board</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #191418;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+body
+{
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:helvetica;
+ background-color:#0B3861;
+}
+
+#output_image
+{
+ width:256px;
+ height:256px;
+}
+    
+</style>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script type= "text/javascript">
+         function preview_image(event) {
+             var reader = new FileReader();
+             reader.onload = function(){
+                 var output = document.getElementById('output_image');
+                 output.src = reader.result;
+             }
+             reader.readAsDataURL(event.target.files[0]);
+         }
+</script>
+</head>
+<body>
+
+<div class="header">
+  <img src="images/maxresdefault.png" alt="superlogo" width="150"
+         height="80">
+  <h1>Super Message Board</h1>
+</div>
+
+
+<div class="row">
+  <div class="side">
+    <h1>Settings</h1>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="supercalenderpage.html">Calender</a></li>
+      <li><a href="#supergames.html">Games</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <h2>System Settings</h2>
+    <h5>Set Profile Picture</h5> 
+    <input type="file" accept="image/*" onchange="preview_image(event)">
+    <img src="https://maap.ictas.vt.edu/content/maap_ictas_vt_edu/en/About/People/_jcr_content/content/vtmulticolumn_1922581201/vt-items_0/adaptiveimage_copy_c_795333438.transform/m-medium/image.png" id="output_image" alt="your image"/>
+    <br>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
