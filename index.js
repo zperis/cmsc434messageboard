@@ -46,7 +46,6 @@ app.get("/addAnnouncement", function(req, res) {
 app.post("/addAnnouncement", function(req, res) {
   _.each(_DATA, function(value) {
     value.announcements=req.body.announcements;
-    console.log(value.announcements);
   })
   
   dataUtil.saveData(_DATA);
@@ -80,7 +79,6 @@ app.get("/addQOD", function(req, res) {
 app.post("/addQOD", function(req, res) {
   _.each(_DATA, function(value) {
     value.qod = req.body.qod;
-    console.log(value.qod);
   })
   
   dataUtil.saveData(_DATA);
@@ -121,7 +119,6 @@ app.post("/removeFirst", function(req, res) {
   _.each(_DATA, function(value) {
     var arr = value.signin;
     for(var i = 0; i < arr.length; i++) {
-      console.log(arr[index][0]);
       arr[index][0] = count;
       count++;
       index++;
@@ -133,11 +130,21 @@ app.post("/removeFirst", function(req, res) {
 });
 
 
+app.post("/removeCurrent", function(req, res) {
+  res.redirect("/editSignin");
+});
+
  //**************************** */
  // RENDERS Calender Page
  //**************************** */
 app.get("/calender", function(req, res) {
   res.render('calender',{
+    data: _DATA
+  });
+});
+
+app.get("/game", function(req, res) {
+  res.render('game',{
     data: _DATA
   });
 });
