@@ -21,11 +21,6 @@ var handlebars = exphbs.handlebars;
 var _ = require("underscore");
 const { parse } = require('querystring');
 
-/* Add whatever endpoints you need! Remember that your API endpoints must
- * have '/api' prepended to them. Please remember that you need at least 5
- * endpoints for the API, and 5 others.
- */
-
  //******************* */
  // RENDERS HOME PAGE
  //******************* */
@@ -35,83 +30,87 @@ app.get('/',function(req,res){
   });
 });
 
-//**************** */
-// API GET REQUEST
-//**************** */
-app.get('/api/getPlayers',function(req,res){
-  var players = [];
-  _.each(_DATA, function(value) {
-        players.push(value);
-})
-  res.json(players);
-});
-
-/***************************** */
-// RENDER ADD PLAYER HTML FORM
-//**************************** */
-app.get("/addImage", function(req, res) {
-  res.render('addImage');
-});
-
-//************************* */
-// ADD PLAYER VIA HTML FORM
-//************************* */
-app.post('/addImage', function(req, res) {
-  
-});
-
+ //**************************** */
+ // RENDERS Announcements Page
+ //**************************** */
 app.get("/addAnnouncement", function(req, res) {
   res.render('addAnnouncement',{
     data: _DATA
   });
 });
 
+
+ //************************************ */
+ // Adds new announcement to data.json
+ //************************************ */
 app.post("/addAnnouncement", function(req, res) {
   _.each(_DATA, function(value) {
     value.announcements=req.body.announcements;
     console.log(value.announcements);
   })
   
-  // console.log(value.announcements);
   dataUtil.saveData(_DATA);
   res.redirect("/addAnnouncement");
 });
 
+
+ //**************************** */
+ // No longer being used
+ //**************************** */
 app.get("/announcementPreview", function(req, res) {
   res.render('announcementPreview',{
     data: _DATA
   });
 });
 
+
+ //**************************** */
+ // RENDERS QOD Page
+ //**************************** */
 app.get("/addQOD", function(req, res) {
   res.render('qod.handlebars',{
     data: _DATA
   });
 });
 
+
+ //**************************** */
+ // Adds new quote to data.json
+ //**************************** */
 app.post("/addQOD", function(req, res) {
   _.each(_DATA, function(value) {
     value.qod = req.body.qod;
     console.log(value.qod);
   })
   
-  // console.log(value.announcements);
   dataUtil.saveData(_DATA);
   res.redirect("/addQOD");
 });
 
+
+ //**************************** */
+ // No longer being used
+ //**************************** */
 app.get("/qodPreview", function(req, res) {
   res.render('qodPreview',{
     data: _DATA
   });
 });
 
+
+ //**************************** */
+ // RENDERS Signin Page
+ //**************************** */
 app.get("/editSignin", function(req, res) {
   res.render('signin',{
     data: _DATA
   });
 });
 
+
+ //************************************ */
+ // REMOVES the first element in queue
+ //************************************ */
 app.post("/removeFirst", function(req, res) {
   _.each(_DATA, function(value) {
     value.signin.shift();
@@ -129,18 +128,24 @@ app.post("/removeFirst", function(req, res) {
     }
   })
 
-  
-  // console.log(value.announcements);
   dataUtil.saveData(_DATA);
   res.redirect("/editSignin");
 });
 
+
+ //**************************** */
+ // RENDERS Calender Page
+ //**************************** */
 app.get("/calender", function(req, res) {
   res.render('calender',{
     data: _DATA
   });
 });
 
+
+ //*********************************** */
+ // Specifies which port to listen on
+ //*********************************** */
 app.listen(3000, function() {
     console.log('Listening on port 3000!');
 });
