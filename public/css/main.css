@@ -114,12 +114,14 @@ body
 
 .signin {
 	padding: 10px;
-	display: inline;
+  display: inline;
+  
 }
 
 .signinContainer {
 	background-color: cornsilk;
-	border-style: ridge;
+  border-style: ridge;
+  text-align: center;
 }
 
 .signinContainer:hover .delete {

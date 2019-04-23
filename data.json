@@ -1,2 +1,5 @@
 {"players":[{"image":"","announcements":"This is a new announcement","calender":"","qod":"New quote of the day",
-    "signin":[[1,"Arjun"],[2,"Nav"],[3,"Zarek"],[4,"Pratyush"]]}]}
+    "signin":[[1,"Arjun","arjun@email.com","Help with hw"],
+    [2,"Nav","nav@email.com","Help with project"],
+    [3,"Zarek","zarek@email.com","Grading question"],
+    [4,"Pratyush","prat@email.com","Help with homework"]]}]}
