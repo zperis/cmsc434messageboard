@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use('/public', express.static('public'));
+app.use('/images', express.static('images'));
 
 // My Variables
 var fs = require('fs');
