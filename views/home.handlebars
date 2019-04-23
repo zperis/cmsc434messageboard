@@ -1,3 +1,15 @@
+<style>
+    #status{
+    color: green;
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+    border-style: outset;
+    box-sizing: border-box;
+    width: 20%;
+}
+</style>
+
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
@@ -16,15 +28,28 @@
                 document.getElementById('namearea').innerHTML = document.getElementById('newname').value;
             }
         }
+        
+        function statuschange(){
+             
+             if (document.getElementById("status").innerHTML == "IN"){
+                 document.getElementById("status").style.color = "red";
+                 document.getElementById("status").innerHTML = "OUT";
+             }
+             else{
+                 document.getElementById("status").style.color = "Green";
+                 document.getElementById("status").innerHTML = "IN";
+             }
+             
+        }
     
 </script>
 
- <h2>System Settings</h2>
-    <h4>Set Profile Picture</h4> 
+ <h2>System Settings</h2>  <p id ="status" onclick = "statuschange()"> IN </p>
+<h4>Set Profile Picture</h4>
     <input type="file" accept="image/*" onchange="preview_image(event)">
     <img src="https://maap.ictas.vt.edu/content/maap_ictas_vt_edu/en/About/People/_jcr_content/content/vtmulticolumn_1922581201/vt-items_0/adaptiveimage_copy_c_795333438.transform/m-medium/image.png" id="output_image" alt="your image"/>
     <br>
     <h4>Change your Username: </h4>
-       <input type = "text" id = "newname"/> <button type="button" onclick= "namechange()">Submit!</button>
+       <input type = "text" id = "newname"/> <button type="button" onclick= "namechange()">Update!</button>
       <br>
       <h5>Current username: <h5 id = "namearea">Evan Golub</h5></h5>
