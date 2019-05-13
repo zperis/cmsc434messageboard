@@ -85,37 +85,37 @@ public class Scheduler extends AppCompatActivity {
                 "December"};
         String month=monthName[calendar.get(Calendar.MONTH)];
 
-        final ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setTitle(month+"-2019");
+//        final ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayHomeAsUpEnabled(false);
+//        actionBar.setTitle(month+"-2019");
 
-        compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
-        compactCalendar.setUseThreeLetterAbbreviation(true);
-
-        //set an event
-        Event ev1 = new Event(Color.RED, 1556542800000L,"Office Hours from 3-5pm");
-        compactCalendar.addEvent(ev1);
-
-
-        compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
-            @Override
-            public void onDayClick(Date dateClicked) {
-                Context context = getApplicationContext();
-
-                Log.i("TAG",dateClicked.toString());
-                if(dateClicked.toString().compareTo("Mon Apr 29 00:00:00 EDT 2019") == 0) {
-                    Toast.makeText(context, "Office Hours from 3-5pm", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(context, "No events planned for the day!", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onMonthScroll(Date firstDayOfNewMonth) {
-                actionBar.setTitle(dateFormatMonth.format(firstDayOfNewMonth));
-
-            }
-        });
+//        compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
+//        compactCalendar.setUseThreeLetterAbbreviation(true);
+//
+//        //set an event
+//        Event ev1 = new Event(Color.RED, 1556542800000L,"Office Hours from 3-5pm");
+//        compactCalendar.addEvent(ev1);
+//
+//
+//        compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+//            @Override
+//            public void onDayClick(Date dateClicked) {
+//                Context context = getApplicationContext();
+//
+//                Log.i("TAG",dateClicked.toString());
+//                if(dateClicked.toString().compareTo("Mon Apr 29 00:00:00 EDT 2019") == 0) {
+//                    Toast.makeText(context, "Office Hours from 3-5pm", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(context, "No events planned for the day!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onMonthScroll(Date firstDayOfNewMonth) {
+////                actionBar.setTitle(dateFormatMonth.format(firstDayOfNewMonth));
+//
+//            }
+//        });
     }
 
 

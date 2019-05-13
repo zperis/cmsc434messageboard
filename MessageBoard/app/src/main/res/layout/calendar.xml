@@ -19,35 +19,45 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="961dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/compactcalendar_view"
-        app:layout_constraintVertical_bias="0.0"
         app:menu="@menu/navigation" />
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="972dp"
+        android:layout_height="12dp"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <com.github.sundeepk.compactcalendarview.CompactCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/compactcalendar_view"
-        android:layout_width="970dp"
-        android:layout_height="273dp"
-        android:layout_marginTop="72dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:compactCalendarBackgroundColor="@color/colorPrimaryDark"
-        app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
-        app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
-        app:compactCalendarMultiEventIndicatorColor="#fff"
-        app:compactCalendarTargetHeight="250dp"
-        app:compactCalendarTextColor="#fff"
-        app:compactCalendarTextSize="12sp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="578dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="200dp"
+        android:text="Evan Golub's Message Board"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="33sp"
+        app:layout_constraintEnd_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="998dp"
+        android:layout_height="366dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/calendar" />
+
+
 </android.support.constraint.ConstraintLayout>

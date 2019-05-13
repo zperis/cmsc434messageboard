@@ -63,9 +63,10 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="954dp"
-        android:layout_height="94dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
         android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,10 +76,11 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="970dp"
-        android:layout_height="20dp"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
         android:background="@color/colorPrimaryDark"
         android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -88,6 +90,7 @@
         android:layout_height="37dp"
         android:text="Evan Golub's Message Board"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="33sp"
         app:layout_constraintEnd_toStartOf="@+id/view1"
         app:layout_constraintTop_toTopOf="parent" />
 
