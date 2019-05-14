@@ -24,7 +24,7 @@
          }
     
         function namechange(){
-            if(confirm("Are you sure?")){
+            if(confirm("Are you sure you want to update your profile?")){
                 document.getElementById('namearea').innerHTML = document.getElementById('newname').value;
             }
         }
@@ -43,13 +43,14 @@
         }
     
 </script>
-
-<h2>System Settings</h2> <p>Set Status: </p> <p id ="status" onclick = "statuschange()">IN OFFICE</p>
+<h4>Set Status: </h4> <p id ="status" onclick = "statuschange()">IN OFFICE</p>
+<h2>System Settings</h2> 
 <h4>Set Profile Picture</h4>
     <input type="file" accept="image/*" onchange="preview_image(event)">
     <img src="https://maap.ictas.vt.edu/content/maap_ictas_vt_edu/en/About/People/_jcr_content/content/vtmulticolumn_1922581201/vt-items_0/adaptiveimage_copy_c_795333438.transform/m-medium/image.png" id="output_image" alt="your image"/>
     <br>
     <h4>Change your Username: </h4>
-       <input type = "text" id = "newname"/> <button type="button" onclick= "namechange()">Update!</button>
+       <input type = "text" id = "newname"/> 
       <br>
       <h5>Current username: <h5 id = "namearea">Evan Golub</h5></h5>
+    <button type="button" onclick= "namechange()">Save Changes!</button>
