@@ -8,7 +8,9 @@
     box-sizing: border-box;
     width: 20%;
 }
+    
 </style>
+
 
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -43,7 +45,8 @@
         }
     
 </script>
-<h4>Set Status: </h4> <p id ="status" onclick = "statuschange()">IN OFFICE</p>
+<h4>Set Status: <p id ="status" onclick = "statuschange()">IN OFFICE</p></h4> 
+<br>
 <h2>System Settings</h2> 
 <h4>Set Profile Picture</h4>
     <input type="file" accept="image/*" onchange="preview_image(event)">
@@ -53,4 +56,4 @@
        <input type = "text" id = "newname"/> 
       <br>
       <h5>Current username: <h5 id = "namearea">Evan Golub</h5></h5>
-    <button type="button" onclick= "namechange()">Save Changes!</button>
+    <button type="button" onclick= "namechange()" style="float: right;">Save Changes!</button>
