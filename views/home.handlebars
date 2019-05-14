@@ -31,20 +31,20 @@
         
         function statuschange(){
              
-             if (document.getElementById("status").innerHTML == "IN"){
+             if (document.getElementById("status").innerHTML == "IN OFFICE"){
                  document.getElementById("status").style.color = "red";
-                 document.getElementById("status").innerHTML = "OUT";
+                 document.getElementById("status").innerHTML = "OUT OF OFFICE";
              }
              else{
                  document.getElementById("status").style.color = "Green";
-                 document.getElementById("status").innerHTML = "IN";
+                 document.getElementById("status").innerHTML = "IN OFFICE";
              }
              
         }
     
 </script>
 
- <h2>System Settings</h2>  <p id ="status" onclick = "statuschange()"> IN </p>
+<h2>System Settings</h2> <p>Set Status: </p> <p id ="status" onclick = "statuschange()">IN OFFICE</p>
 <h4>Set Profile Picture</h4>
     <input type="file" accept="image/*" onchange="preview_image(event)">
     <img src="https://maap.ictas.vt.edu/content/maap_ictas_vt_edu/en/About/People/_jcr_content/content/vtmulticolumn_1922581201/vt-items_0/adaptiveimage_copy_c_795333438.transform/m-medium/image.png" id="output_image" alt="your image"/>
